@@ -43,11 +43,41 @@ public class ListaArticulo {
         System.out.println("Datos iniciales cargados en la lista de artículos.");
 	}
 	
-	/*public ArrayList<Articulo> reponer()
+	public ArrayList<Articulo> reponer()
 	{
-		if(this.lista)
+		 ArrayList<Articulo> articulosConBajoStock = new ArrayList<>();
+		 
+		for (Articulo a:lista) 
 		{
-			
+			if (a.getStock()<50) 
+			{
+				articulosConBajoStock.add(a);
+			} 
 		}
-	}*/
+		return articulosConBajoStock;
+	}
+	
+	public ArrayList<Articulo> mascaro()
+	{
+		 ArrayList<Articulo> articuloMasCaro = new ArrayList<>();
+		 
+		 double maxPrecio =0; 
+		 
+		for (Articulo a:lista) 
+		{
+			if (a.getPrecio()>maxPrecio) 
+			{
+				maxPrecio = a.getPrecio();
+			} 
+		}
+		for (Articulo a:lista) 
+		{
+			if (a.getPrecio()==maxPrecio) 
+			{
+				articuloMasCaro.add(a);
+			} 
+		}
+		return articuloMasCaro;
+	}
+	
 }
