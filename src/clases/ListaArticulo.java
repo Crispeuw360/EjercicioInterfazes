@@ -80,4 +80,42 @@ public class ListaArticulo {
 		return articuloMasCaro;
 	}
 	
+	public ArrayList<Articulo> equivalentes(String codigo)
+	{
+		 ArrayList<Articulo> articulosEquivalentes = new ArrayList<>();
+		 
+		 Articulo articuloBase = null;
+		 
+		for (Articulo a : lista) 
+		{
+		        if (a.getCodigo().equalsIgnoreCase(codigo)) 
+		        {
+		            articuloBase = a;
+		        }
+		    }
+
+		for (Articulo a:lista) 
+		{
+			if (!a.getCodigo().equalsIgnoreCase(codigo) && a.getPrecio() == articuloBase.getPrecio()) 
+			{
+	            articulosEquivalentes.add(a);
+	        }
+		}
+		return articulosEquivalentes;
+	}
+	
+	public double precio(String Codigo)
+	{
+		double precioDevolver = 0;
+		for(Articulo a:lista)
+		{
+			if(a.getCodigo().equalsIgnoreCase(Codigo))
+			{
+				precioDevolver = a.getPrecio();
+			}
+		}
+		return precioDevolver;
+	}
+
+	
 }
