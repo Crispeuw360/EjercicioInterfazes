@@ -71,7 +71,7 @@ public class InterfazesMain {
 				break;
 				
 			case 1:
-				
+				crearFac(facturas);
 				break;
 
 			case 2:
