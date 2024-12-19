@@ -24,7 +24,32 @@ public class InterfazesMain {
 	
 	public static void crearFac(ArrayList<Factura> facturas)
 	{
+		int numero;
+		String nombre;
+		String apellido;
+		double total;
+
+		String codigo;
+		int cantidad;
+		double totalLinea;
 		
+		System.out.println("Introduce numero de factura:");
+		numero = Utilidades.leerInt();
+		
+		System.out.println("Introduce el nombre:");
+		nombre = Utilidades.introducirCadena();
+		
+		System.out.println("Introduce el apellido:");
+		apellido = Utilidades.introducirCadena();
+				
+		System.out.println("Introduce Total: ");
+		total = Utilidades.leerDouble();
+		
+		ArrayList<Linea_Factura> l = new ArrayList<>();
+		
+		Factura f = new Factura(numero,nombre,apellido,l,total);
+		
+		facturas.add(f);
 	}
 	
 	public static void main(String[] args) {
